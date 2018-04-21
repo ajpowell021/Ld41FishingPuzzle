@@ -12,7 +12,46 @@ public class StateManager : Singleton<StateManager> {
     public bool inQuickTimeEvent;
     public int quickTimeDifficulty; // scale 1 to 3
 
+    public bool upArrowLit;
+    public bool downArrowLit;
+    public bool leftArrowLit;
+    public bool rightArrowLit;
+    public bool spacebarLit;
+
+    public int totalPushedPerRound;
+    public int pushesUntilRoundComplete;
+    public bool roundCompleted;
+    public int roundsLeft;
+
     // Public Functions
+
+    public void setTotalPushedPerRound(int amount) {
+        totalPushedPerRound = amount;
+    }
+
+    public void roundComplete() {
+        --roundsLeft;
+        if (roundsLeft == 0) {
+            // FISH CATCH HERE!
+            Debug.Log("FISH HAS BEEN CAUGHT!");
+        }
+    }
+
+    public void setRoundsLeft(int amount) {
+        roundsLeft = amount;
+    }
+
+    public void goodPush() {
+        --pushesUntilRoundComplete;
+
+        if (pushesUntilRoundComplete == 0) {
+            roundCompleted = true;
+        }
+    }
+
+    public void setPushedUntilRoundComplete(int amount) {
+        pushesUntilRoundComplete = amount;
+    }
 
     public void adjustQuickTimeEvent(bool startQuickTime) {
         inQuickTimeEvent = startQuickTime;

@@ -19,6 +19,7 @@ public class UiManager : MonoBehaviour {
     // Private State
 
     private StateManager stateManager;
+    private int lastRoll;
 
     // Init
 
@@ -44,6 +45,12 @@ public class UiManager : MonoBehaviour {
     public void lightUpRandomKey() {
         int roll = Random.Range(1, 6);
 
+        while (roll == lastRoll) {
+            roll = Random.Range(1, 6);
+        }
+
+        lastRoll = roll;
+
         switch (roll) {
                 case 1:
                     StartCoroutine(highlightUpArrow());
@@ -60,46 +67,59 @@ public class UiManager : MonoBehaviour {
                 case 5:
                     StartCoroutine(highlightSpaceBar());
                     break;
+                default:
+                    Debug.Log("roll outta range!");
+                    break;
         }
     }
 
     private IEnumerator highlightUpArrow() {
-             yield return upArrow.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
+        stateManager.upArrowLit = true;
+        yield return upArrow.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
     }
 
     private IEnumerator highlightDownArrow() {
+        stateManager.downArrowLit = true;
         yield return downArrow.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
     }
 
     private IEnumerator highlightLeftArrow() {
+        stateManager.leftArrowLit = true;
         yield return leftArrow.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
     }
 
     private IEnumerator highlightRightArrow() {
+        stateManager.rightArrowLit = true;
         yield return rightArrow.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
     }
 
     private IEnumerator highlightSpaceBar() {
+        stateManager.spacebarLit = true;
         yield return spaceBar.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
     }
 
     public void upArrowClicked() {
+        stateManager.upArrowLit = false;
         upArrow.GetComponent<DoodleAnimator>().GoToAndPause();
     }
 
     public void downArrowClicked() {
+        stateManager.downArrowLit = false;
         downArrow.GetComponent<DoodleAnimator>().GoToAndPause();
     }
 
     public void leftArrowClicked() {
+        stateManager.leftArrowLit = false;
         leftArrow.GetComponent<DoodleAnimator>().GoToAndPause();
     }
 
     public void rightArrowClicked() {
+        stateManager.rightArrowLit = false;
         rightArrow.GetComponent<DoodleAnimator>().GoToAndPause();
     }
 
     public void spaceBarClicked() {
+        stateManager.spacebarLit = false;
         spaceBar.GetComponent<DoodleAnimator>().GoToAndPause();
     }
 }

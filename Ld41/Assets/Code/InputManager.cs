@@ -53,20 +53,25 @@ public class InputManager : MonoBehaviour {
 	}
 
 	private void checkQuickTimeKeys() {
-		if (Input.GetKeyDown("up")) {
+		if (Input.GetKeyDown("up") && stateManager.upArrowLit) {
 			uiManager.upArrowClicked();
+			stateManager.goodPush();
 		}
-		else if (Input.GetKeyDown("down")) {
+		else if (Input.GetKeyDown("down") && stateManager.downArrowLit) {
 			uiManager.downArrowClicked();
+			stateManager.goodPush();
 		}
-		else if (Input.GetKeyDown("left")) {
+		else if (Input.GetKeyDown("left") && stateManager.leftArrowLit) {
 			uiManager.leftArrowClicked();
+			stateManager.goodPush();
 		}
-		else if (Input.GetKeyDown("right")) {
+		else if (Input.GetKeyDown("right") && stateManager.rightArrowLit) {
 			uiManager.rightArrowClicked();
+			stateManager.goodPush();
 		}
-		else if (Input.GetKeyDown("space")) {
+		else if (Input.GetKeyDown("space") && stateManager.spacebarLit) {
 			uiManager.spaceBarClicked();
+			stateManager.goodPush();
 		}
 	}
 }

@@ -30,7 +30,10 @@ public class QuickTimeEvents : MonoBehaviour {
     public void startQuickTimeEvent() {
 
         if (stateManager.quickTimeDifficulty == 1) {
-            StartCoroutine(quickTimeOne());
+            stateManager.setRoundsLeft(5);
+            stateManager.setPushedUntilRoundComplete(2);
+            stateManager.setTotalPushedPerRound(2);
+            displayTwoQuickTimes();
         }
         else if (stateManager.quickTimeDifficulty == 2) {
 
@@ -40,16 +43,40 @@ public class QuickTimeEvents : MonoBehaviour {
         }
     }
 
+    public void roundCompleted() {
+        StopAllCoroutines();
+        stateManager.roundComplete();
+        if (stateManager.roundsLeft > 0) {
+            switch (stateManager.totalPushedPerRound) {
+                    case 2:
+                        displayTwoQuickTimes();
+                        stateManager.setPushedUntilRoundComplete(2);
+                        break;
+                    case 3:
+                        displayThreeQuickTimes();
+                        stateManager.setPushedUntilRoundComplete(3);
+                        break;
+                    case 4:
+                        displayFourQuickTimes();
+                        stateManager.setPushedUntilRoundComplete(4);
+                        break;
+            }
+        }
+    }
+
     // Private Functions
 
-    private IEnumerator quickTimeOne() {
+    private void displayTwoQuickTimes() {
+        uiManager.lightUpRandomKey();
+        uiManager.lightUpRandomKey();
+    }
 
+    private void displayThreeQuickTimes() {
         uiManager.lightUpRandomKey();
         uiManager.lightUpRandomKey();
-        yield return new WaitForSeconds(2);
-        uiManager.lightUpRandomKey();
-        uiManager.lightUpRandomKey();
-        yield return new WaitForSeconds(2);
+    }
+
+    private void displayFourQuickTimes() {
         uiManager.lightUpRandomKey();
         uiManager.lightUpRandomKey();
     }
