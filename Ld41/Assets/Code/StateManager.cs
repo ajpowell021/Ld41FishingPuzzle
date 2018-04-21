@@ -28,6 +28,14 @@ public class StateManager : Singleton<StateManager> {
 
     public bool fishCaught;
 
+    private FishManager fishManager;
+
+    // Init
+
+    private void Start() {
+        fishManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<FishManager>();
+    }
+
     // Update
 
     private void Update() {
@@ -126,6 +134,7 @@ public class StateManager : Singleton<StateManager> {
             fishSpawnPosition = new Vector3(11, 7, 0);
         }
 
+        fishManager.killCrabIfHere(fishSpawnPosition);
         fishHook.transform.position = fishSpawnPosition;
         waitingForCast = false;
     }
