@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Chany\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Ld41.648801336.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Chany\Desktop\Workspace\Ld41FishingPuzzle\Ld41" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Doodle Studio 95" t="Include">
+          <e p="Assets" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="LICENSES.txt" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="DrawPreview.shader" t="Include" />
+              <e p="JitterTextShader.shader" t="Include" />
+              <e p="Sprite-ShadowCasting.shader" t="Include" />
+              <e p="Standard-DoubleSided.shader" t="Include" />
+            </e>
+            <e p="Textures" t="Include">
+              <e p="Walter_Turncoat" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Examples" t="Include">
+            <e p="Assets" t="Include">
+              <e p="2D Environment" t="Include">
+                <e p="BirdCharacter.cs" t="Include" />
+                <e p="Parchment_source.txt" t="Include" />
+                <e p="Worm.cs" t="Include" />
+                <e p="WormArea.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="ChainAnimations.cs" t="Include" />
+              <e p="RespawnOnOppositeEnd.cs" t="Include" />
+              <e p="SimpleFollowingCamera.cs" t="Include" />
+              <e p="SleepUntilTouched.cs" t="Include" />
+              <e p="ThirdParty" t="Include">
+                <e p="Unity-FPS-Controller" t="Include">
+                  <e p="FPS.cs" t="Include" />
+                </e>
+              </e>
+              <e p="TriggerTransition.cs" t="Include" />
+              <e p="WalkingCharacter.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="FishListener.cs" t="Include" />
+        <e p="HookMovement.cs" t="Include" />
+        <e p="InputManager.cs" t="Include" />
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ProCore" t="Include">
+          <e p="ProGrids" t="Include">
+            <e p="About" t="Include">
+              <e p="changelog.txt" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="pg_AboutWindow.cs" t="Include" />
+              </e>
+              <e p="pc_AboutEntry_ProGrids.txt" t="Include" />
+            </e>
+            <e p="Classes" t="Include">
+              <e p="pg_Constant.cs" t="Include" />
+              <e p="pg_Enum.cs" t="Include" />
+              <e p="pg_IconUtility.cs" t="Include" />
+              <e p="pg_IgnoreSnapAttribute.cs" t="Include" />
+              <e p="pg_SceneMeshRender.cs" t="Include" />
+              <e p="pg_Util.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="pg_Editor.cs" t="Include" />
+              <e p="pg_GridRenderer.cs" t="Include" />
+              <e p="pg_ParameterWindow.cs" t="Include" />
+              <e p="pg_Preferences.cs" t="Include" />
+              <e p="pg_ToggleContent.cs" t="Include" />
+            </e>
+            <e p="MonoBehaviour" t="Include">
+              <e p="pg_IgnoreSnap.cs" t="Include" />
+            </e>
+            <e p="Shader" t="Include">
+              <e p="pg_GridShader.shader" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Singleton.cs" t="Include" />
+        <e p="StateManager.cs" t="Include" />
+      </e>
+      <e p="Ld41.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
