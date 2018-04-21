@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PhysicalPlane
   - Hook
+  - Fish
+  - Managers
+  - PowerBit
   layers:
   - Default
   - TransparentFX

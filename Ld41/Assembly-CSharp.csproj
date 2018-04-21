@@ -52,6 +52,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\FishManager.cs" />
+    <Compile Include="Assets\Code\FishMovement.cs" />
+    <Compile Include="Assets\Code\HookMovement.cs" />
+    <Compile Include="Assets\Code\InputManager.cs" />
+    <Compile Include="Assets\Code\PowerBitMovement.cs" />
+    <Compile Include="Assets\Code\Singleton.cs" />
+    <Compile Include="Assets\Code\StateManager.cs" />
+    <Compile Include="Assets\Code\UiManager.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Assets\2D Environment\BirdCharacter.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Assets\2D Environment\Worm.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Assets\2D Environment\WormArea.cs" />
@@ -62,9 +70,6 @@
     <Compile Include="Assets\Doodle Studio 95\Examples\Scripts\ThirdParty\Unity-FPS-Controller\FPS.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Scripts\TriggerTransition.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Scripts\WalkingCharacter.cs" />
-    <Compile Include="Assets\FishListener.cs" />
-    <Compile Include="Assets\HookMovement.cs" />
-    <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Constant.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Enum.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_IconUtility.cs" />
@@ -72,8 +77,6 @@
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_SceneMeshRender.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Util.cs" />
     <Compile Include="Assets\ProCore\ProGrids\MonoBehaviour\pg_IgnoreSnap.cs" />
-    <Compile Include="Assets\Singleton.cs" />
-    <Compile Include="Assets\StateManager.cs" />
     <None Include="Assets\ProCore\ProGrids\Shader\pg_GridShader.shader" />
     <None Include="Assets\Doodle Studio 95\Assets\Shaders\Sprite-ShadowCasting.shader" />
     <None Include="Assets\Doodle Studio 95\Assets\Textures\Walter_Turncoat\LICENSE.txt" />
@@ -150,6 +153,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="DoodleStudio95">
+      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/DoodleStudio95.dll</HintPath>
+    </Reference>
+    <Reference Include="DoodleStudio95Editor">
+      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/Editor/DoodleStudio95Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/Chany/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -170,12 +179,6 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Chany/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="DoodleStudio95Editor">
-      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/Editor/DoodleStudio95Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DoodleStudio95">
-      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/DoodleStudio95.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

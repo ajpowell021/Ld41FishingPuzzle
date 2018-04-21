@@ -119,6 +119,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="DoodleStudio95">
+      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/DoodleStudio95.dll</HintPath>
+    </Reference>
+    <Reference Include="DoodleStudio95Editor">
+      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/Editor/DoodleStudio95Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/Chany/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -139,12 +145,6 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Chany/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="DoodleStudio95Editor">
-      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/Editor/DoodleStudio95Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="DoodleStudio95">
-      <HintPath>C:/Users/Chany/Desktop/Workspace/Ld41FishingPuzzle/Ld41/Assets/Doodle Studio 95/Plugins/DoodleStudio95.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

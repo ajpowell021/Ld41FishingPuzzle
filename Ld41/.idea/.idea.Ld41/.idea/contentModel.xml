@@ -7,6 +7,16 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Code" t="Include">
+          <e p="FishManager.cs" t="Include" />
+          <e p="FishMovement.cs" t="Include" />
+          <e p="HookMovement.cs" t="Include" />
+          <e p="InputManager.cs" t="Include" />
+          <e p="PowerBitMovement.cs" t="Include" />
+          <e p="Singleton.cs" t="Include" />
+          <e p="StateManager.cs" t="Include" />
+          <e p="UiManager.cs" t="Include" />
+        </e>
         <e p="Doodle Studio 95" t="Include">
           <e p="Assets" t="Include">
             <e p="Scripts" t="Include">
@@ -48,9 +58,6 @@
             </e>
           </e>
         </e>
-        <e p="FishListener.cs" t="Include" />
-        <e p="HookMovement.cs" t="Include" />
-        <e p="InputManager.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -90,8 +97,6 @@
             </e>
           </e>
         </e>
-        <e p="Singleton.cs" t="Include" />
-        <e p="StateManager.cs" t="Include" />
       </e>
       <e p="Ld41.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
