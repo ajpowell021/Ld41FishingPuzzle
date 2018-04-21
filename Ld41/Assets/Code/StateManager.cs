@@ -8,9 +8,10 @@ public class StateManager : Singleton<StateManager> {
 
     // Public State
 
+    public float timer;
+    public bool timerRunning;
+
     public bool waitingForCast = true;
-    public bool inQuickTimeEvent;
-    public int quickTimeDifficulty; // scale 1 to 3
 
     public bool upArrowLit;
     public bool downArrowLit;
@@ -18,12 +19,34 @@ public class StateManager : Singleton<StateManager> {
     public bool rightArrowLit;
     public bool spacebarLit;
 
+    public bool inQuickTimeEvent;
+    public int quickTimeDifficulty; // scale 1 to 3
     public int totalPushedPerRound;
     public int pushesUntilRoundComplete;
     public bool roundCompleted;
     public int roundsLeft;
 
+    // Update
+
+    private void Update() {
+        if (timerRunning) {
+            timer -= Time.deltaTime;
+        }
+
+        if (timer <= 0) {
+            timerRunning = false;
+        }
+    }
+
     // Public Functions
+
+    public void decreaseTimerForHookMove() {
+        --timer;
+    }
+
+    public void setQuickTimeDifficulty(int diff) {
+        quickTimeDifficulty = diff;
+    }
 
     public void setTotalPushedPerRound(int amount) {
         totalPushedPerRound = amount;

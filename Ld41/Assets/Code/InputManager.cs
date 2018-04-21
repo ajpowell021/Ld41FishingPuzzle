@@ -23,7 +23,9 @@ public class InputManager : MonoBehaviour {
 	// Update
 	private void Update () {
 		checkForPowerButton();
-		checkHookmovement();
+		if (!stateManager.waitingForCast) {
+			checkHookMovement();
+		}
 		checkQuickTimeKeys();
 	}
 
@@ -37,7 +39,7 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
-	private void checkHookmovement() {
+	private void checkHookMovement() {
 		if (Input.GetKeyDown("s")) {
 			hookMovement.moveHook(Vector3.down);
 		}

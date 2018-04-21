@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour {
 
     public Transform powerBar;
     public Transform powerBit;
+    public Transform timerDisplay;
 
     public Transform upArrow;
     public Transform downArrow;
@@ -38,38 +39,168 @@ public class UiManager : MonoBehaviour {
             powerBar.GetComponent<SpriteRenderer>().enabled = true;
             powerBit.GetComponent<SpriteRenderer>().enabled = true;
         }
+
+        udpateTimerCounter();
     }
 
     // Public Functions
 
-    public void lightUpRandomKey() {
-        int roll = Random.Range(1, 6);
+    public void highlightTwoRandomKeys() {
+        int roll = Random.Range(1, 11);
 
         while (roll == lastRoll) {
-            roll = Random.Range(1, 6);
+            roll = Random.RandomRange(1, 11);
         }
 
         lastRoll = roll;
 
         switch (roll) {
-                case 1:
-                    StartCoroutine(highlightUpArrow());
-                    break;
-                case 2:
-                    StartCoroutine(highlightDownArrow());
-                    break;
-                case 3:
-                    StartCoroutine(highlightLeftArrow());
-                    break;
-                case 4:
-                    StartCoroutine(highlightRightArrow());
-                    break;
-                case 5:
-                    StartCoroutine(highlightSpaceBar());
-                    break;
-                default:
-                    Debug.Log("roll outta range!");
-                    break;
+            case 1:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                break;
+            case 2:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightLeftArrow());
+                break;
+            case 3:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightRightArrow());
+                break;
+            case 4:
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightDownArrow());
+                break;
+            case 5:
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightDownArrow());
+                break;
+            case 6:
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightLeftArrow());
+                break;
+            case 7:
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 8:
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 9:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 10:
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+         }
+    }
+
+    public void highlightThreeRandomKeys() {
+        int roll = Random.Range(1, 11);
+
+        while (roll == lastRoll) {
+            roll = Random.RandomRange(1, 11);
+        }
+
+        lastRoll = roll;
+
+        switch (roll) {
+            case 1:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightLeftArrow());
+                break;
+            case 2:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightRightArrow());
+                break;
+            case 3:
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightRightArrow());
+                break;
+            case 4:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightRightArrow());
+                break;
+            case 5:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 6:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 7:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 8:
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 9:
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 10:
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+        }
+    }
+
+    public void highlightFourRandomKeys() {
+        int roll = Random.Range(1, 6);
+
+        while (roll == lastRoll) {
+            roll = Random.RandomRange(1, 6);
+        }
+
+        lastRoll = roll;
+
+        switch (roll) {
+            case 1:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightRightArrow());
+                break;
+            case 2:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 3:
+                StartCoroutine(highlightSpaceBar());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightRightArrow());
+                break;
+            case 4:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightRightArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
+            case 5:
+                StartCoroutine(highlightUpArrow());
+                StartCoroutine(highlightDownArrow());
+                StartCoroutine(highlightLeftArrow());
+                StartCoroutine(highlightSpaceBar());
+                break;
         }
     }
 
@@ -121,5 +252,11 @@ public class UiManager : MonoBehaviour {
     public void spaceBarClicked() {
         stateManager.spacebarLit = false;
         spaceBar.GetComponent<DoodleAnimator>().GoToAndPause();
+    }
+
+    // Private Funtions
+
+    private void udpateTimerCounter() {
+        timerDisplay.GetComponent<DoodleAnimator>().SetFrame(Mathf.RoundToInt(stateManager.timer));
     }
 }

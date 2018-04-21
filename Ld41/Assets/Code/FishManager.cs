@@ -7,7 +7,8 @@ public class FishManager : MonoBehaviour {
 
 	// Public Functions
 
-	public void moveAllFishes() {
+	public IEnumerator moveAllFishes() {
+		yield return new WaitForFixedUpdate();
 		List<GameObject> fishes = GameObject.FindGameObjectsWithTag("Fish").ToList();
 
 		for (int i = 0; i < fishes.Count; i++) {

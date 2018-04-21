@@ -36,10 +36,16 @@ public class QuickTimeEvents : MonoBehaviour {
             displayTwoQuickTimes();
         }
         else if (stateManager.quickTimeDifficulty == 2) {
-
+            stateManager.setRoundsLeft(10);
+            stateManager.setPushedUntilRoundComplete(3);
+            stateManager.setTotalPushedPerRound(3);
+            displayThreeQuickTimes();
         }
         else {
-
+            stateManager.setRoundsLeft(15);
+            stateManager.setPushedUntilRoundComplete(4);
+            stateManager.setTotalPushedPerRound(4);
+            displayFourQuickTimes();
         }
     }
 
@@ -67,17 +73,14 @@ public class QuickTimeEvents : MonoBehaviour {
     // Private Functions
 
     private void displayTwoQuickTimes() {
-        uiManager.lightUpRandomKey();
-        uiManager.lightUpRandomKey();
+        uiManager.highlightTwoRandomKeys();
     }
 
     private void displayThreeQuickTimes() {
-        uiManager.lightUpRandomKey();
-        uiManager.lightUpRandomKey();
+        uiManager.highlightThreeRandomKeys();
     }
 
     private void displayFourQuickTimes() {
-        uiManager.lightUpRandomKey();
-        uiManager.lightUpRandomKey();
+        uiManager.highlightFourRandomKeys();
     }
 }
