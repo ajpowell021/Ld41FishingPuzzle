@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BackToFishingButton.cs" />
     <Compile Include="Assets\Code\CameraScript.cs" />
     <Compile Include="Assets\Code\CatchTextDisplay.cs" />
     <Compile Include="Assets\Code\FishManager.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Doodle Studio 95\Examples\Scripts\ThirdParty\Unity-FPS-Controller\FPS.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Scripts\TriggerTransition.cs" />
     <Compile Include="Assets\Doodle Studio 95\Examples\Scripts\WalkingCharacter.cs" />
+    <Compile Include="Assets\FishStats.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Constant.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Enum.cs" />
     <Compile Include="Assets\ProCore\ProGrids\Classes\pg_IconUtility.cs" />

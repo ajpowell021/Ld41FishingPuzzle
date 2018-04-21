@@ -26,6 +26,8 @@ public class StateManager : Singleton<StateManager> {
     public bool roundCompleted;
     public int roundsLeft;
 
+    public bool fishCaught;
+
     // Update
 
     private void Update() {
@@ -56,7 +58,9 @@ public class StateManager : Singleton<StateManager> {
         --roundsLeft;
         if (roundsLeft == 0) {
             // FISH CATCH HERE!
+            timerRunning = false;
             Debug.Log("FISH HAS BEEN CAUGHT!");
+            fishCaught = true;
         }
     }
 

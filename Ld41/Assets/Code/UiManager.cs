@@ -10,6 +10,8 @@ public class UiManager : MonoBehaviour {
     public Transform powerBar;
     public Transform powerBit;
     public Transform timerDisplay;
+    public Transform otherTimerDisplay;
+    public Transform fishTimerDisplay;
 
     public Transform upArrow;
     public Transform downArrow;
@@ -258,5 +260,7 @@ public class UiManager : MonoBehaviour {
 
     private void udpateTimerCounter() {
         timerDisplay.GetComponent<DoodleAnimator>().SetFrame(Mathf.RoundToInt(stateManager.timer));
+        otherTimerDisplay.GetComponent<DoodleAnimator>().SetFrame(Mathf.RoundToInt(stateManager.timer));
+        fishTimerDisplay.GetComponent<DoodleAnimator>().SetFrame(Mathf.RoundToInt(stateManager.timer));
     }
 }
