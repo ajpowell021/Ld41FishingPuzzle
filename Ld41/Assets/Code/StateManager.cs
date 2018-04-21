@@ -9,8 +9,14 @@ public class StateManager : Singleton<StateManager> {
     // Public State
 
     public bool waitingForCast = true;
+    public bool inQuickTimeEvent;
+    public int quickTimeDifficulty; // scale 1 to 3
 
     // Public Functions
+
+    public void adjustQuickTimeEvent(bool startQuickTime) {
+        inQuickTimeEvent = startQuickTime;
+    }
 
     public void makeCast(float percentage) {
 

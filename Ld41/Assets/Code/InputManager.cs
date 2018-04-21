@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour {
 	private HookMovement hookMovement;
 	private PowerBitMovement powerBitMovement;
 	private StateManager stateManager;
+	private UiManager uiManager;
 
 	// Init
 
@@ -16,12 +17,14 @@ public class InputManager : MonoBehaviour {
 		stateManager = StateManager.Instance;
 		hookMovement = GameObject.FindGameObjectWithTag("Hook").GetComponent<HookMovement>();
 		powerBitMovement = GameObject.FindGameObjectWithTag("PowerBit").GetComponent<PowerBitMovement>();
+		uiManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<UiManager>();
 	}
 
 	// Update
 	private void Update () {
 		checkForPowerButton();
 		checkHookmovement();
+		checkQuickTimeKeys();
 	}
 
 	// Hook Movement
@@ -46,6 +49,24 @@ public class InputManager : MonoBehaviour {
 		}
 		else if (Input.GetKeyDown("w")) {
 			hookMovement.moveHook(Vector3.up);
+		}
+	}
+
+	private void checkQuickTimeKeys() {
+		if (Input.GetKeyDown("up")) {
+			uiManager.upArrowClicked();
+		}
+		else if (Input.GetKeyDown("down")) {
+			uiManager.downArrowClicked();
+		}
+		else if (Input.GetKeyDown("left")) {
+			uiManager.leftArrowClicked();
+		}
+		else if (Input.GetKeyDown("right")) {
+			uiManager.rightArrowClicked();
+		}
+		else if (Input.GetKeyDown("space")) {
+			uiManager.spaceBarClicked();
 		}
 	}
 }

@@ -57,6 +57,7 @@
     <Compile Include="Assets\Code\HookMovement.cs" />
     <Compile Include="Assets\Code\InputManager.cs" />
     <Compile Include="Assets\Code\PowerBitMovement.cs" />
+    <Compile Include="Assets\Code\QuickTimeEvents.cs" />
     <Compile Include="Assets\Code\Singleton.cs" />
     <Compile Include="Assets\Code\StateManager.cs" />
     <Compile Include="Assets\Code\UiManager.cs" />

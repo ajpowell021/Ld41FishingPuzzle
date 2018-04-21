@@ -13,6 +13,7 @@
           <e p="HookMovement.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
           <e p="PowerBitMovement.cs" t="Include" />
+          <e p="QuickTimeEvents.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="StateManager.cs" t="Include" />
           <e p="UiManager.cs" t="Include" />
