@@ -9,18 +9,21 @@ public class SpawnLevels : MonoBehaviour {
 	public Transform whale;
 	public Transform alphaFish;
 	public Transform rainBowFish;
+	public Transform dragonFish;
 
 	public Transform crab;
 	public Transform log;
+	public Transform rock;
 
 	private FishStats fishStats;
+	private Vector3 vectorNone = new Vector3(0, 0, 0);
 
 	private StateManager stateManager;
 
 	private void Awake() {
 		stateManager = StateManager.Instance;
 		fishStats = GameObject.FindGameObjectWithTag("Managers").GetComponent<FishStats>();
-		spawnLevelOne();
+		spawnLevelSix();
 	}
 
 	public void clearLevel() {
@@ -160,4 +163,153 @@ public class SpawnLevels : MonoBehaviour {
 		fishMovement.fishMoveQueue.Add(Vector3.up);
 		fishMovement.fishMoveQueue.Add(Vector3.left);
 	}
+
+	public void spawnLevelFour() {
+
+		GameObject fish = Instantiate(dragonFish, new Vector3(6, 2, 0), Quaternion.identity).gameObject;
+		Fish specificFish = fish.GetComponent<Fish>();
+		fishStats.activeFishWeight = specificFish.fishWeight;
+		fishStats.activeFishType = specificFish.fishType;
+		stateManager.quickTimeDifficulty = specificFish.fishDiff;
+
+		GameObject catchingFish = Instantiate(dragonFish, new Vector3(32, 5.59f, 0), Quaternion.identity).gameObject;
+		catchingFish.transform.localScale = new Vector3(1, 1, 1);
+
+		GameObject displayFish = Instantiate(dragonFish, new Vector3(32, 26, 0), Quaternion.identity).gameObject;
+		displayFish.transform.localScale = new Vector3(1, 1, 1);
+
+		for (int i = 1; i < 12; i++) {
+			Instantiate(crab, new Vector3(i, 7, 0), Quaternion.identity);
+		}
+
+		GameObject crabOne = Instantiate(crab, new Vector3(4, 5, 0), Quaternion.identity).gameObject;
+		FishMovement crabMovement = crabOne.GetComponent<FishMovement>();
+		crabMovement.repeats = true;
+		crabMovement.fishMoveQueue.Add(Vector3.right);
+		crabMovement.fishMoveQueue.Add(Vector3.left);
+		crabMovement.fishMoveQueue.Add(Vector3.left);
+		crabMovement.fishMoveQueue.Add(Vector3.right);
+
+		GameObject crabTwo = Instantiate(crab, new Vector3(8, 5, 0), Quaternion.identity).gameObject;
+		crabMovement = crabTwo.GetComponent<FishMovement>();
+		crabMovement.repeats = true;
+		crabMovement.fishMoveQueue.Add(Vector3.left);
+		crabMovement.fishMoveQueue.Add(Vector3.right);
+		crabMovement.fishMoveQueue.Add(Vector3.right);
+		crabMovement.fishMoveQueue.Add(Vector3.left);
+
+		GameObject crabThree = Instantiate(crab, new Vector3(4, 2, 0), Quaternion.identity).gameObject;
+		GameObject crabFour = Instantiate(crab, new Vector3(8, 2, 0), Quaternion.identity).gameObject;
+
+		crabMovement = crabThree.GetComponent<FishMovement>();
+		crabMovement.repeats = true;
+		crabMovement.fishMoveQueue.Add(Vector3.up);
+		crabMovement.fishMoveQueue.Add(Vector3.up);
+		crabMovement.fishMoveQueue.Add(Vector3.down);
+		crabMovement.fishMoveQueue.Add(Vector3.down);
+
+		crabMovement = crabFour.GetComponent<FishMovement>();
+		crabMovement.repeats = true;
+		crabMovement.fishMoveQueue.Add(Vector3.up);
+		crabMovement.fishMoveQueue.Add(Vector3.up);
+		crabMovement.fishMoveQueue.Add(Vector3.down);
+		crabMovement.fishMoveQueue.Add(Vector3.down);
+
+		Instantiate(log, new Vector3(6, 3, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(2, 3, 0), Quaternion.Euler(0, 0, 90));
+		Instantiate(log, new Vector3(10, 3, 0), Quaternion.Euler(0, 0, 90));
+	}
+
+	public void spawnLevelFive() {
+
+		GameObject fish = Instantiate(alphaFish, new Vector3(6, 2, 0), Quaternion.Euler(0, 180, 0)).gameObject;
+		Fish specificFish = fish.GetComponent<Fish>();
+		fishStats.activeFishWeight = specificFish.fishWeight;
+		fishStats.activeFishType = specificFish.fishType;
+		stateManager.quickTimeDifficulty = specificFish.fishDiff;
+
+		GameObject catchingFish = Instantiate(alphaFish, new Vector3(32, 5.59f, 0), Quaternion.identity).gameObject;
+		catchingFish.transform.localScale = new Vector3(1, 1, 1);
+
+		GameObject displayFish = Instantiate(alphaFish, new Vector3(32, 26, 0), Quaternion.identity).gameObject;
+		displayFish.transform.localScale = new Vector3(1, 1, 1);
+
+		FishMovement fishMovement = fish.GetComponent<FishMovement>();
+		fishMovement.repeats = true;
+		fishMovement.fishMoveQueue.Add(Vector3.right);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.right);
+
+		GameObject crabOne = Instantiate(crab, new Vector3(4, 4, 0), Quaternion.identity).gameObject;
+		FishMovement crabMovement = crabOne.GetComponent<FishMovement>();
+		crabMovement.repeats = true;
+		crabMovement.fishMoveQueue.Add(vectorNone);
+		crabMovement.fishMoveQueue.Add(Vector3.right);
+		crabMovement.fishMoveQueue.Add(vectorNone);
+		crabMovement.fishMoveQueue.Add(vectorNone);
+		crabMovement.fishMoveQueue.Add(Vector3.left);
+		crabMovement.fishMoveQueue.Add(vectorNone);
+
+		GameObject crabTwo = Instantiate(crab, new Vector3(8, 4, 0), Quaternion.identity).gameObject;
+		crabMovement = crabTwo.GetComponent<FishMovement>();
+		crabMovement.repeats = true;
+		crabMovement.fishMoveQueue.Add(vectorNone);
+		crabMovement.fishMoveQueue.Add(Vector3.left);
+		crabMovement.fishMoveQueue.Add(vectorNone);
+		crabMovement.fishMoveQueue.Add(Vector3.right);
+
+		Instantiate(log, new Vector3(2, 4, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(10, 4, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(3, 5, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(9, 5, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(6, 4, 0), Quaternion.Euler(0, 0, 90));
+
+		Instantiate(rock, new Vector3(4, 6, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(6, 6, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(8, 6, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(9, 3, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(8, 3, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(8, 2, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(4, 3, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(4, 2, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(3, 3, 0), Quaternion.identity);
+	}
+
+	public void spawnLevelSix() {
+
+		GameObject fish = Instantiate(whale, new Vector3(8, 6, 0), Quaternion.Euler(0, 180, 0)).gameObject;
+		Fish specificFish = fish.GetComponent<Fish>();
+		fishStats.activeFishWeight = specificFish.fishWeight;
+		fishStats.activeFishType = specificFish.fishType;
+		stateManager.quickTimeDifficulty = specificFish.fishDiff;
+
+		GameObject catchingFish = Instantiate(whale, new Vector3(32, 5.59f, 0), Quaternion.identity).gameObject;
+		catchingFish.transform.localScale = new Vector3(1, 1, 1);
+
+		GameObject displayFish = Instantiate(whale, new Vector3(32, 26, 0), Quaternion.identity).gameObject;
+		displayFish.transform.localScale = new Vector3(1, 1, 1);
+
+		FishMovement fishMovement = fish.GetComponent<FishMovement>();
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+
+		Instantiate(rock, new Vector3(7, 7, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(9, 7, 0), Quaternion.identity);
+		Instantiate(rock, new Vector3(9, 3, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(7, 5, 0), Quaternion.Euler(0, 0, 90));
+		Instantiate(log, new Vector3(9, 5, 0), Quaternion.Euler(0, 0, 90));
+		Instantiate(log, new Vector3(6, 3, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(12, 3, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(3, 3, 0), Quaternion.identity);
+	}
+
 }

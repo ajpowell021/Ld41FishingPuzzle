@@ -8,6 +8,7 @@ public class BackToFishingButton : MonoBehaviour {
 	private CameraScript cameraScript;
 	private PowerBitMovement powerBitMovement;
 	private SpawnLevels spawnLevels;
+	public int lastRoll;
 
 	private void Start() {
 		stateManager = StateManager.Instance;
@@ -30,7 +31,13 @@ public class BackToFishingButton : MonoBehaviour {
 	}
 
 	public void spawnRandomLevel() {
-		int roll = Random.Range(0, 3);
+		int roll = Random.Range(0, 4);
+
+		while (roll == lastRoll) {
+			roll = Random.Range(0, 4);
+		}
+
+		lastRoll = roll;
 
 		switch (roll) {
 				case 0:
@@ -41,6 +48,15 @@ public class BackToFishingButton : MonoBehaviour {
 					break;
 				case 2:
 					spawnLevels.spawnLevelThree();
+					break;
+				case 3:
+					spawnLevels.spawnLevelFour();
+					break;
+				case 4:
+					spawnLevels.spawnLevelFive();
+					break;
+				case 5:
+					spawnLevels.spawnLevelSix();
 					break;
 		}
 	}

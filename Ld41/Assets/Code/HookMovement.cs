@@ -9,13 +9,16 @@ public class HookMovement : MonoBehaviour {
 	private StateManager stateManager;
 	private FishManager fishManager;
 	private CameraScript cameraScript;
+	private SoundPlayer soundPlayer;
 
 	// Init
 
 	private void Awake() {
+		GameObject managers = GameObject.FindGameObjectWithTag("Managers");
 		stateManager = StateManager.Instance;
-		fishManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<FishManager>();
+		fishManager = managers.GetComponent<FishManager>();
 		cameraScript = Camera.main.GetComponent<CameraScript>();
+		soundPlayer = managers.GetComponent<SoundPlayer>();
 	}
 
 	// Public Functions
@@ -25,11 +28,13 @@ public class HookMovement : MonoBehaviour {
 		if (!Physics.Raycast(transform.position, direction, out hit, 1)) {
 			stateManager.decreaseTimerForHookMove();
 			transform.position = Vector3.Lerp(transform.position, transform.position + direction, 1);
+			soundPlayer.playHookMoveSound();
 			StartCoroutine(fishManager.moveAllFishes());
 		}
 		else if (hit.collider.CompareTag("Fish")) {
 			stateManager.decreaseTimerForHookMove();
 			transform.position = Vector3.Lerp(transform.position, transform.position + direction, 1);
+			soundPlayer.playHookMoveSound();
 			StartCoroutine(fishManager.moveAllFishes());
 		}
 	}

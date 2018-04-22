@@ -106,6 +106,7 @@
           </e>
         </e>
         <e p="ScoreController.cs" t="Include" />
+        <e p="SoundPlayer.cs" t="Include" />
       </e>
       <e p="Ld41.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

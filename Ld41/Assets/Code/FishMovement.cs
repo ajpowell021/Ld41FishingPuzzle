@@ -8,13 +8,16 @@ public class FishMovement : MonoBehaviour {
 	// Public State
 
 	public List<Vector3> fishMoveQueue;
+	public List<Vector3> savedQueue;
 
 	private GameObject hook;
+	public bool repeats;
 
 	// Init
 
 	private void Start() {
 		hook = GameObject.FindGameObjectWithTag("Hook");
+		savedQueue.AddRange(fishMoveQueue);
 	}
 
 	// Public Functions
@@ -25,11 +28,18 @@ public class FishMovement : MonoBehaviour {
 				transform.position = Vector3.Lerp(
 					transform.position,
 					transform.position + fishMoveQueue[0]
-					,1 );
+					, 1 );
 
 				checkForImageFlip();
 				fishMoveQueue.RemoveAt(0);
+				checkForRepeat();
 			}
+		}
+	}
+
+	private void checkForRepeat() {
+		if (repeats && fishMoveQueue.Count == 0) {
+			fishMoveQueue.AddRange(savedQueue);
 		}
 	}
 
@@ -44,6 +54,7 @@ public class FishMovement : MonoBehaviour {
 
 	public IEnumerator crabDeath() {
 		yield return gameObject.GetComponent<DoodleAnimator>().PlayAndPauseAt(0, 8);
+		Destroy(gameObject);
 	}
 
 	private bool crabHookCheck() {

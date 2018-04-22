@@ -16,10 +16,14 @@ public class FishStats : MonoBehaviour {
     public Transform guppieType;
     public Transform rainbowType;
     public Transform whaleType;
+    public Transform dragonType;
+    public Transform alphaType;
 
     private DoodleAnimator guppieAnim;
     private DoodleAnimator rainbowAnim;
     private DoodleAnimator whaleAnim;
+    private DoodleAnimator dragonAnim;
+    private DoodleAnimator alphaAnim;
 
     // Private State
 
@@ -48,6 +52,8 @@ public class FishStats : MonoBehaviour {
         guppieAnim = guppieType.GetComponent<DoodleAnimator>();
         rainbowAnim = rainbowType.GetComponent<DoodleAnimator>();
         whaleAnim = whaleType.GetComponent<DoodleAnimator>();
+        dragonAnim = dragonType.GetComponent<DoodleAnimator>();
+        alphaAnim = alphaType.GetComponent<DoodleAnimator>();
     }
 
     private void checkForFishCaught() {
@@ -69,16 +75,39 @@ public class FishStats : MonoBehaviour {
             guppieAnim.enabled = true;
             rainbowAnim.enabled = false;
             whaleAnim.enabled = false;
+            dragonAnim.enabled = false;
+            alphaAnim.enabled = false;
         }
         else if (activeFishType == FishType.RainbowFish) {
             guppieAnim.enabled = false;
             rainbowAnim.enabled = true;
             whaleAnim.enabled = false;
+            dragonAnim.enabled = false;
+            alphaAnim.enabled = false;
         }
         else if (activeFishType == FishType.Whale) {
             guppieAnim.enabled = false;
             rainbowAnim.enabled = false;
             whaleAnim.enabled = true;
+            dragonAnim.enabled = false;
+            alphaAnim.enabled = false;
+        }
+        else if (activeFishType == FishType.DragonFish) {
+            guppieAnim.enabled = false;
+            rainbowAnim.enabled = false;
+            whaleAnim.enabled = false;
+            dragonAnim.enabled = true;
+            alphaAnim.enabled = false;
+        }
+        else if (activeFishType == FishType.AlphaFish) {
+            guppieAnim.enabled = false;
+            rainbowAnim.enabled = false;
+            whaleAnim.enabled = false;
+            dragonAnim.enabled = false;
+            alphaAnim.enabled = true;
+        }
+        else {
+            Debug.Log("Wrong fish type in FishStats!");
         }
     }
 
