@@ -19,7 +19,9 @@ public class StateManager : Singleton<StateManager> {
     public bool rightArrowLit;
     public bool spacebarLit;
 
-    public bool inQuickTimeEvent;
+    public bool onFishStatsScreen;
+    public bool shouldStartQuickTimeEvent;
+    public bool isMovingLureAround;
     public int quickTimeDifficulty; // scale 1 to 3
     public int totalPushedPerRound;
     public int pushesUntilRoundComplete;
@@ -89,7 +91,7 @@ public class StateManager : Singleton<StateManager> {
     }
 
     public void adjustQuickTimeEvent(bool startQuickTime) {
-        inQuickTimeEvent = startQuickTime;
+        shouldStartQuickTimeEvent = startQuickTime;
     }
 
     public void makeCast(float percentage) {
@@ -136,6 +138,7 @@ public class StateManager : Singleton<StateManager> {
 
         fishManager.killCrabIfHere(fishSpawnPosition);
         fishHook.transform.position = fishSpawnPosition;
+        isMovingLureAround = true;
         waitingForCast = false;
     }
 }

@@ -19,7 +19,7 @@ public class QuickTimeEvents : MonoBehaviour {
     // Update
 
     private void Update() {
-        if (stateManager.inQuickTimeEvent) {
+        if (stateManager.shouldStartQuickTimeEvent) {
             startQuickTimeEvent();
             stateManager.adjustQuickTimeEvent(false);
         }

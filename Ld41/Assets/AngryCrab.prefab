@@ -107,14 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfc2c4584fc14b478d01bb317ed7b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishMoveQueue:
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
+  fishMoveQueue: []
 --- !u!212 &212814359558281294
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -149,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 213515487695237284, guid: b9bc60dbc501f174fbc3cc31ef70cfe4, type: 2}
+  m_Sprite: {fileID: 213657471791569564, guid: b9bc60dbc501f174fbc3cc31ef70cfe4, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

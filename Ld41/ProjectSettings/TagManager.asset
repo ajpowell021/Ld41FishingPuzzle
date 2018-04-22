@@ -10,6 +10,7 @@ TagManager:
   - Managers
   - PowerBit
   - Crab
+  - Log
   layers:
   - Default
   - TransparentFX

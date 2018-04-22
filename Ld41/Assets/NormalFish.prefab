@@ -108,14 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfc2c4584fc14b478d01bb317ed7b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishMoveQueue:
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 0, y: 1, z: 0}
-  - {x: 0, y: 1, z: 0}
+  fishMoveQueue: []
 --- !u!114 &114921495610605062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishWeight: 0
-  doodleAnimator: {fileID: 0}
+  doodleAnimator: {fileID: 114104084618611236}
+  fishType: 0
 --- !u!212 &212574566903732928
 SpriteRenderer:
   m_ObjectHideFlags: 1

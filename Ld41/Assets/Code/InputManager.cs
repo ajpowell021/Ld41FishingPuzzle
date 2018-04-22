@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour {
 	private PowerBitMovement powerBitMovement;
 	private StateManager stateManager;
 	private UiManager uiManager;
+	private BackToFishingButton backToFishingButton;
 
 	// Init
 
@@ -18,15 +19,19 @@ public class InputManager : MonoBehaviour {
 		hookMovement = GameObject.FindGameObjectWithTag("Hook").GetComponent<HookMovement>();
 		powerBitMovement = GameObject.FindGameObjectWithTag("PowerBit").GetComponent<PowerBitMovement>();
 		uiManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<UiManager>();
+		backToFishingButton = GameObject.Find("NextFishButton").GetComponent<BackToFishingButton>();
 	}
 
 	// Update
 	private void Update () {
 		checkForPowerButton();
-		if (!stateManager.waitingForCast) {
+		if (stateManager.isMovingLureAround) {
 			checkHookMovement();
 		}
 		checkQuickTimeKeys();
+		if (stateManager.onFishStatsScreen) {
+			fishCaughtScreen();
+		}
 	}
 
 	// Hook Movement
@@ -40,16 +45,16 @@ public class InputManager : MonoBehaviour {
 	}
 
 	private void checkHookMovement() {
-		if (Input.GetKeyDown("s")) {
+		if (Input.GetKeyDown("s") || Input.GetKeyDown("down")) {
 			hookMovement.moveHook(Vector3.down);
 		}
-		else if (Input.GetKeyDown("a")) {
+		else if (Input.GetKeyDown("a") || Input.GetKeyDown("left")) {
 			hookMovement.moveHook(Vector3.left);
 		}
-		else if (Input.GetKeyDown("d")) {
+		else if (Input.GetKeyDown("d") || Input.GetKeyDown("right")) {
 			hookMovement.moveHook(Vector3.right);
 		}
-		else if (Input.GetKeyDown("w")) {
+		else if (Input.GetKeyDown("w") || Input.GetKeyDown("up")) {
 			hookMovement.moveHook(Vector3.up);
 		}
 	}
@@ -74,6 +79,12 @@ public class InputManager : MonoBehaviour {
 		else if (Input.GetKeyDown("space") && stateManager.spacebarLit) {
 			uiManager.spaceBarClicked();
 			stateManager.goodPush();
+		}
+	}
+
+	private void fishCaughtScreen() {
+		if (Input.GetKeyDown("return") || Input.GetKeyDown("space")) {
+			backToFishingButton.nextLevel();
 		}
 	}
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Chany\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Ld41.648801336.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Chany\Desktop\Workspace\Ld41FishingPuzzle\Ld41" t="IncludeRecursive">
+    <e p="$USER_HOME$/Library/Caches/Rider2017.3/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_Ld41.-210562064.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -20,6 +20,7 @@
           <e p="PowerBitMovement.cs" t="Include" />
           <e p="QuickTimeEvents.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
+          <e p="SpawnLevels.cs" t="Include" />
           <e p="StateManager.cs" t="Include" />
           <e p="UiManager.cs" t="Include" />
         </e>

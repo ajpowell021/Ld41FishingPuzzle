@@ -26,6 +26,7 @@ public class FishStats : MonoBehaviour {
 
     private void checkForFishCaught() {
         if (stateManager.fishCaught) {
+            stateManager.onFishStatsScreen = true;
             cameraScript.movetToFishStats();
             stateManager.fishCaught = false;
         }
