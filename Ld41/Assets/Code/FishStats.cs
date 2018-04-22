@@ -15,9 +15,11 @@ public class FishStats : MonoBehaviour {
     public Transform scoreDisplay;
     public Transform guppieType;
     public Transform rainbowType;
+    public Transform whaleType;
 
-    public DoodleAnimator guppieAnim;
-    public DoodleAnimator rainbowAnim;
+    private DoodleAnimator guppieAnim;
+    private DoodleAnimator rainbowAnim;
+    private DoodleAnimator whaleAnim;
 
     // Private State
 
@@ -45,6 +47,7 @@ public class FishStats : MonoBehaviour {
     private void setAnims() {
         guppieAnim = guppieType.GetComponent<DoodleAnimator>();
         rainbowAnim = rainbowType.GetComponent<DoodleAnimator>();
+        whaleAnim = whaleType.GetComponent<DoodleAnimator>();
     }
 
     private void checkForFishCaught() {
@@ -65,10 +68,17 @@ public class FishStats : MonoBehaviour {
         if (activeFishType == FishType.Guppie) {
             guppieAnim.enabled = true;
             rainbowAnim.enabled = false;
+            whaleAnim.enabled = false;
         }
         else if (activeFishType == FishType.RainbowFish) {
             guppieAnim.enabled = false;
             rainbowAnim.enabled = true;
+            whaleAnim.enabled = false;
+        }
+        else if (activeFishType == FishType.Whale) {
+            guppieAnim.enabled = false;
+            rainbowAnim.enabled = false;
+            whaleAnim.enabled = true;
         }
     }
 
@@ -84,7 +94,7 @@ public class FishStats : MonoBehaviour {
         }
 
         if (stateManager.quickTimeDifficulty == 1) {
-            score += 5;
+            score += 0;
         }
         else if (stateManager.quickTimeDifficulty == 2) {
             score += 15;

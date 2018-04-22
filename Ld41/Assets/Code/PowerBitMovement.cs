@@ -11,7 +11,7 @@ public class PowerBitMovement : MonoBehaviour {
     // Private State
 
     private bool movingRight;
-    private bool isMoving = true;
+    private bool isMoving;
     private StateManager stateManager;
 
     // Init

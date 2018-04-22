@@ -10,6 +10,8 @@ public class StateManager : Singleton<StateManager> {
 
     public int totalScore;
 
+    public bool onTitleScreen;
+
     public float currentFishEndTime;
     public float currentFishStartTime;
 
@@ -36,11 +38,14 @@ public class StateManager : Singleton<StateManager> {
     public bool fishCaught;
 
     private FishManager fishManager;
+    private CameraScript cameraScript;
 
     // Init
 
     private void Start() {
         fishManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<FishManager>();
+        cameraScript = Camera.main.GetComponent<CameraScript>();
+        onTitleScreen = true;
     }
 
     // Update
@@ -52,6 +57,7 @@ public class StateManager : Singleton<StateManager> {
 
         if (timer <= 0) {
             timerRunning = false;
+            cameraScript.moveToFinalScreen();
         }
     }
 

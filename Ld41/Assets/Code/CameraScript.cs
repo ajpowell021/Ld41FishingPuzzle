@@ -27,4 +27,12 @@ public class CameraScript : MonoBehaviour {
 	public void movetToFishStats() {
 		transform.position = Vector3.Lerp(transform.position, new Vector3(30, 25, -10), 1);
 	}
+
+	public void moveToFinalScreen() {
+		transform.position = Vector3.Lerp(transform.position, new Vector3(7, -13, -10), 1);
+	}
+
+	public void moveToTitleScreen() {
+		transform.position = Vector3.Lerp(transform.position, new Vector3(6, 25, -10), 1);
+	}
 }

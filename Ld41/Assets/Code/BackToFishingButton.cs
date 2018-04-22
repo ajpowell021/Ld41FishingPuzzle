@@ -29,8 +29,8 @@ public class BackToFishingButton : MonoBehaviour {
 		stateManager.onFishStatsScreen = false;
 	}
 
-	private void spawnRandomLevel() {
-		int roll = Random.Range(0, 2);
+	public void spawnRandomLevel() {
+		int roll = Random.Range(0, 3);
 
 		switch (roll) {
 				case 0:
@@ -38,6 +38,9 @@ public class BackToFishingButton : MonoBehaviour {
 					break;
 				case 1:
 					spawnLevels.spawnLevelTwo();
+					break;
+				case 2:
+					spawnLevels.spawnLevelThree();
 					break;
 		}
 	}

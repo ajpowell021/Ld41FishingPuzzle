@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour {
 	private StateManager stateManager;
 	private UiManager uiManager;
 	private BackToFishingButton backToFishingButton;
+	private CameraScript cameraScript;
 
 	// Init
 
@@ -20,6 +21,7 @@ public class InputManager : MonoBehaviour {
 		powerBitMovement = GameObject.FindGameObjectWithTag("PowerBit").GetComponent<PowerBitMovement>();
 		uiManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<UiManager>();
 		backToFishingButton = GameObject.Find("NextFishButton").GetComponent<BackToFishingButton>();
+		cameraScript = Camera.main.GetComponent<CameraScript>();
 	}
 
 	// Update
@@ -31,6 +33,10 @@ public class InputManager : MonoBehaviour {
 		checkQuickTimeKeys();
 		if (stateManager.onFishStatsScreen) {
 			fishCaughtScreen();
+		}
+
+		if (stateManager.onTitleScreen) {
+			checkForTitleScreenInput();
 		}
 	}
 
@@ -85,6 +91,15 @@ public class InputManager : MonoBehaviour {
 	private void fishCaughtScreen() {
 		if (Input.GetKeyDown("return") || Input.GetKeyDown("space")) {
 			backToFishingButton.nextLevel();
+		}
+	}
+
+	private void checkForTitleScreenInput() {
+		if (Input.GetKeyDown("space")) {
+			cameraScript.moveToBoatScreen();
+			stateManager.onTitleScreen = false;
+			stateManager.waitingForCast = true;
+			powerBitMovement.toggleMoving();
 		}
 	}
 }

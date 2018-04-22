@@ -36,13 +36,13 @@ public class QuickTimeEvents : MonoBehaviour {
             displayTwoQuickTimes();
         }
         else if (stateManager.quickTimeDifficulty == 2) {
-            stateManager.setRoundsLeft(10);
+            stateManager.setRoundsLeft(7);
             stateManager.setPushedUntilRoundComplete(3);
             stateManager.setTotalPushedPerRound(3);
             displayThreeQuickTimes();
         }
         else {
-            stateManager.setRoundsLeft(15);
+            stateManager.setRoundsLeft(7);
             stateManager.setPushedUntilRoundComplete(4);
             stateManager.setTotalPushedPerRound(4);
             displayFourQuickTimes();

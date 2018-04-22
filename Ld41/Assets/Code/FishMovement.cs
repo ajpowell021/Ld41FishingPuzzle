@@ -27,8 +27,18 @@ public class FishMovement : MonoBehaviour {
 					transform.position + fishMoveQueue[0]
 					,1 );
 
+				checkForImageFlip();
 				fishMoveQueue.RemoveAt(0);
 			}
+		}
+	}
+
+	private void checkForImageFlip() {
+		if (fishMoveQueue[0] == Vector3.left) {
+			gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
+		else if (fishMoveQueue[0] == Vector3.right) {
+			gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
 

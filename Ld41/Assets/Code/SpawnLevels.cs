@@ -84,7 +84,7 @@ public class SpawnLevels : MonoBehaviour {
 		fishStats.activeFishType = specificFish.fishType;
 		stateManager.quickTimeDifficulty = specificFish.fishDiff;
 
-		GameObject catchingFish = Instantiate(rainBowFish, new Vector3(32, 7, 0), Quaternion.identity).gameObject;
+		GameObject catchingFish = Instantiate(rainBowFish, new Vector3(32, 5.59f, 0), Quaternion.identity).gameObject;
 		catchingFish.transform.localScale = new Vector3(1, 2, 1);
 
 		GameObject displayFish = Instantiate(rainBowFish, new Vector3(32, 26, 0), Quaternion.identity).gameObject;
@@ -123,5 +123,41 @@ public class SpawnLevels : MonoBehaviour {
 		crabMovement.fishMoveQueue.Add(Vector3.down);
 		crabMovement.fishMoveQueue.Add(Vector3.down);
 		crabMovement.fishMoveQueue.Add(Vector3.down);
+	}
+
+	public void spawnLevelThree() {
+
+		GameObject fish = Instantiate(whale, new Vector3(10, 5, 0), Quaternion.identity).gameObject;
+		Fish specificFish = fish.GetComponent<Fish>();
+		fishStats.activeFishWeight = specificFish.fishWeight;
+		fishStats.activeFishType = specificFish.fishType;
+		stateManager.quickTimeDifficulty = specificFish.fishDiff;
+
+		GameObject catchingFish = Instantiate(whale, new Vector3(32, 7, 0), Quaternion.identity).gameObject;
+		catchingFish.transform.localScale = new Vector3(1, 1, 1);
+
+		GameObject displayFish = Instantiate(whale, new Vector3(32, 26, 0), Quaternion.identity).gameObject;
+		displayFish.transform.localScale = new Vector3(1, 1, 1);
+
+		Instantiate(log, new Vector3(1, 6, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(5, 6, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(9, 6, 0), Quaternion.identity);
+		Instantiate(log, new Vector3(5, 4, 0), Quaternion.Euler(0, 0, 90));
+
+		FishMovement fishMovement = fish.GetComponent<FishMovement>();
+
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.down);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
+		fishMovement.fishMoveQueue.Add(Vector3.up);
+		fishMovement.fishMoveQueue.Add(Vector3.up);
+		fishMovement.fishMoveQueue.Add(Vector3.up);
+		fishMovement.fishMoveQueue.Add(Vector3.left);
 	}
 }
