@@ -25,8 +25,20 @@ public class BackToFishingButton : MonoBehaviour {
 		stateManager.waitingForCast = true;
 		spawnLevels.clearLevel();
 		powerBitMovement.toggleMoving();
-		// SPAWN NEW LEVEL HERE
-		spawnLevels.spawnLevelOne();
+		spawnRandomLevel();
 		stateManager.onFishStatsScreen = false;
+	}
+
+	private void spawnRandomLevel() {
+		int roll = Random.Range(0, 2);
+
+		switch (roll) {
+				case 0:
+					spawnLevels.spawnLevelOne();
+					break;
+				case 1:
+					spawnLevels.spawnLevelTwo();
+					break;
+		}
 	}
 }

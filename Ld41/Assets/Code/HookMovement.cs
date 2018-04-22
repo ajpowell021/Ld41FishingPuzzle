@@ -44,7 +44,6 @@ public class HookMovement : MonoBehaviour {
 		stateManager.isMovingLureAround = false;
 		cameraScript.moveToCatchScreen();
 		transform.position = new Vector3(-10, 7, 0);
-		stateManager.setQuickTimeDifficulty(1); // CHANGE THIS
 		stateManager.adjustQuickTimeEvent(true);
 	}
 }

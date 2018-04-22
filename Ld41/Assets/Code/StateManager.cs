@@ -8,6 +8,11 @@ public class StateManager : Singleton<StateManager> {
 
     // Public State
 
+    public int totalScore;
+
+    public float currentFishEndTime;
+    public float currentFishStartTime;
+
     public float timer;
     public bool timerRunning;
 
@@ -71,6 +76,7 @@ public class StateManager : Singleton<StateManager> {
             timerRunning = false;
             Debug.Log("FISH HAS BEEN CAUGHT!");
             fishCaught = true;
+            currentFishEndTime = timer;
         }
     }
 
@@ -95,6 +101,8 @@ public class StateManager : Singleton<StateManager> {
     }
 
     public void makeCast(float percentage) {
+
+        currentFishStartTime = timer;
 
         // Input Cast Animation If There Is Time!
 

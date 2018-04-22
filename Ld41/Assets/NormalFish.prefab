@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3283400822a1c094e85eacfe0f1e3252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishWeight: 0
-  doodleAnimator: {fileID: 114104084618611236}
+  fishWeight: 32
   fishType: 0
+  fishDiff: 1
 --- !u!212 &212574566903732928
 SpriteRenderer:
   m_ObjectHideFlags: 1

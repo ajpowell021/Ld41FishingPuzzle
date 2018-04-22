@@ -7,18 +7,11 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour {
 
+	// Currently, the active fish.
 
-
-	public int fishWeight;
-	public DoodleAnimator doodleAnimator;
+	public float fishWeight;
 	public FishType fishType;
-
-	// Init
-
-	private void Start() {
-		doodleAnimator = gameObject.GetComponent<DoodleAnimator>();
-		//fishWeight;
-	}
+	public int fishDiff;
 
 
 }
