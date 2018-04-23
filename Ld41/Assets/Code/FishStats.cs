@@ -61,6 +61,7 @@ public class FishStats : MonoBehaviour {
             stateManager.onFishStatsScreen = true;
             cameraScript.movetToFishStats();
             stateManager.fishCaught = false;
+            stateManager.onQuickTimePage = false;
             calcScore();
         }
     }

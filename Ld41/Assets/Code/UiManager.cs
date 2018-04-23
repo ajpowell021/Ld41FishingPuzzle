@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DoodleStudio95;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class UiManager : MonoBehaviour {
     public Transform timerDisplay;
     public Transform otherTimerDisplay;
     public Transform fishTimerDisplay;
+
+    public Transform nameEditText;
+    public Transform rulesText;
 
     public Transform upArrow;
     public Transform downArrow;
@@ -42,10 +46,28 @@ public class UiManager : MonoBehaviour {
             powerBit.GetComponent<SpriteRenderer>().enabled = true;
         }
 
+        if (stateManager.onFinishScreen) {
+            nameEditText.gameObject.active = true;
+        }
+        else {
+            nameEditText.gameObject.active = false;
+        }
+
+        if (stateManager.onRulesPage) {
+            rulesText.gameObject.active = true;
+        }
+        else {
+            rulesText.gameObject.active = false;
+        }
+
         udpateTimerCounter();
     }
 
     // Public Functions
+
+    public string getNameFromInput() {
+        return nameEditText.GetComponent<InputField>().text;
+    }
 
     public void highlightTwoRandomKeys() {
         int roll = Random.Range(1, 11);

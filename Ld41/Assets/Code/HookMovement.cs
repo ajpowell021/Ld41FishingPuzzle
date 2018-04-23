@@ -46,6 +46,7 @@ public class HookMovement : MonoBehaviour {
 	}
 
 	private void transitionToFishGame() {
+		stateManager.onQuickTimePage = true;
 		stateManager.isMovingLureAround = false;
 		cameraScript.moveToCatchScreen();
 		transform.position = new Vector3(-10, 7, 0);

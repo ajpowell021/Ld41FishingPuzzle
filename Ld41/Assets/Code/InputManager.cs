@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour {
 	private UiManager uiManager;
 	private BackToFishingButton backToFishingButton;
 	private CameraScript cameraScript;
+	private LeaderBoard leaderBoard;
 
 	// Init
 
@@ -22,15 +23,19 @@ public class InputManager : MonoBehaviour {
 		uiManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<UiManager>();
 		backToFishingButton = GameObject.Find("NextFishButton").GetComponent<BackToFishingButton>();
 		cameraScript = Camera.main.GetComponent<CameraScript>();
+		leaderBoard = GameObject.FindGameObjectWithTag("Managers").GetComponent<LeaderBoard>();
 	}
 
 	// Update
 	private void Update () {
+
 		checkForPowerButton();
 		if (stateManager.isMovingLureAround) {
 			checkHookMovement();
 		}
-		checkQuickTimeKeys();
+		if (stateManager.onQuickTimePage) {
+			checkQuickTimeKeys();
+		}
 		if (stateManager.onFishStatsScreen) {
 			fishCaughtScreen();
 		}

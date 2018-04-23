@@ -11,6 +11,8 @@ TagManager:
   - PowerBit
   - Crab
   - Log
+  - Sent
+  - RuleText
   layers:
   - Default
   - TransparentFX

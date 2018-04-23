@@ -12,12 +12,15 @@ public class StateManager : Singleton<StateManager> {
     public int totalScore;
 
     public bool onTitleScreen;
+    public bool onFinishScreen;
 
     public float currentFishEndTime;
     public float currentFishStartTime;
 
     public float timer;
     public bool timerRunning;
+    public bool onRulesPage;
+    public bool onQuickTimePage;
 
     public bool waitingForCast = true;
 
@@ -61,6 +64,15 @@ public class StateManager : Singleton<StateManager> {
         if (timer <= 0) {
             timerRunning = false;
             cameraScript.moveToFinalScreen();
+            onFinishScreen = true;
+            onFishStatsScreen = false;
+            isMovingLureAround = false;
+            waitingForCast = false;
+            onQuickTimePage = false;
+            upArrowLit = false;
+            downArrowLit = false;
+            leftArrowLit = false;
+            rightArrowLit = false;
         }
     }
 

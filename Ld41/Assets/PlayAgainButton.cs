@@ -27,5 +27,6 @@ public class PlayAgainButton : MonoBehaviour {
 		spawnLevels.clearLevel();
 		backToFishingButton.spawnRandomLevel();
 		hook.transform.position = new Vector3(-9, 7, 0);
+		stateManager.onFinishScreen = false;
 	}
 }

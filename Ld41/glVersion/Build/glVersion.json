@@ -1,0 +1,13 @@
+{
+"companyName": "GhostGoats",
+"productName": "Ld41",
+"dataUrl": "glVersion.data.unityweb",
+"asmCodeUrl": "glVersion.asm.code.unityweb",
+"asmMemoryUrl": "glVersion.asm.memory.unityweb",
+"asmFrameworkUrl": "glVersion.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

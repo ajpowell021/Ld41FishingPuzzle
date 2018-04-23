@@ -35,4 +35,8 @@ public class CameraScript : MonoBehaviour {
 	public void moveToTitleScreen() {
 		transform.position = Vector3.Lerp(transform.position, new Vector3(6, 25, -10), 1);
 	}
+
+	public void moveToRulesScreen() {
+		transform.position = Vector3.Lerp(transform.position, new Vector3(-17, 25, -10), 1);
+	}
 }
